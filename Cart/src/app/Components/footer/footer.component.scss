@@ -1,0 +1,33 @@
+footer {
+  margin: 1rem;
+  margin-top: 0;
+  background-color: #fff;
+  height: fit-content;
+  padding: 1rem;
+  border: 1px solid #dbdbdb;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 1.5rem 1rem;
+  justify-content: center;
+
+  li {
+    padding: 0 1rem;
+    margin: 0 0.5rem;
+    color: #898989;
+    border-right: 2px solid #bfbfbf;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+p {
+  color: #898989;
+  text-align: center;
+  margin: 0;
+}

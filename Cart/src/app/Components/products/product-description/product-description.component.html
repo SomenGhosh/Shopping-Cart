@@ -1,0 +1,79 @@
+<app-nav-bar></app-nav-bar>
+<div class="details">
+  <img src="{{ products.imageUrl }}" alt="image" />
+  <div class="text-details">
+    <h3>{{ products.name }}</h3>
+    <div class="rating">
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <span>5 reviews</span>
+    </div>
+    <div class="price">
+      <h2>{{ products.price | currency: "USD" }}</h2>
+      <select id="model">
+        <option value="Model 1">Model 1</option>
+        <option value="Model 2">Model 2</option>
+        <option value="Model 3"> Model 3</option>
+      </select>
+    </div>
+    <div class="desc">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur porro
+        dolores ab exercitationem animi architecto iste, eaque quae ullam sit
+        optio vero quod quia. Assumenda autem maiores ea dolorum hic.
+      </p>
+      <a class="btn" (click)="addProduct(products.product_id)">Add to Cart</a>
+    </div>
+  </div>
+</div>
+<div class="reviews">
+  <h2>Reviews</h2>
+  <div class="review-item">
+    <div class="user-details">
+      <i class="fas fa-user"></i>
+      <div class="profile">
+        <h3>JOHN DOE</h3>
+        <span>August 14, 2019</span>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tempora
+      facere tenetur! Eius, corporis. Alias minus blanditiis exercitationem
+      culpa pariatur modi officia suscipit! Porro, voluptatum voluptate.
+      Aspernatur perspiciatis impedit eos, distinctio possimus, voluptate
+      tempora voluptatum ratione accusantium quos ducimus totam?
+    </p>
+  </div>
+  <div class="review-item">
+    <div class="user-details">
+      <i class="fas fa-user"></i>
+      <div class="profile">
+        <h3>JOHN DOE</h3>
+        <span>August 14, 2019</span>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tempora
+      facere tenetur! Eius, corporis. Alias minus blanditiis exercitationem
+      culpa pariatur modi officia suscipit! Porro, voluptatum voluptate.
+      Aspernatur perspiciatis impedit eos, distinctio possimus, voluptate
+      tempora voluptatum ratione accusantium quos ducimus totam?
+    </p>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+<div class="shopping-cart">
+  <div class="items-added">
+    <h3>Shopping Cart</h3>
+    <div class="details-wrapper">
+      <div class="details-part" *ngFor="let i of cartProducts">
+        <div class="items">
+          <img src="{{ i.imageUrl }}" alt="product" />
+          <div class="item-desc">
+            <h4>{{ i.name }}</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span>{{ i.price | currency: "USD" }}</span>
+          </div>
+        </div>
+        <input type="number" />
+      </div>
+    </div>
+    <div class="buttons">
+      <a routerLink="../shipping" class="btn">NEXT</a>
+      <a routerLink="../../home" class="btn">CANCEL</a>
+    </div>
+  </div>
+  <div class="summary">
+    <h3>Summary</h3>
+    <h4><strong>ENTER COUPON CODE</strong></h4>
+    <div class="price">
+      <ul>
+        <li>SUBTOTAL</li>
+        <li>{{ getTotal() | currency: "USD" }}</li>
+      </ul>
+      <ul>
+        <li>SHIPPING</li>
+        <li>FREE</li>
+      </ul>
+      <ul>
+        <li>TAXES</li>
+        <li>{{ getTotal() / 10 | currency: "USD" }}</li>
+      </ul>
+    </div>
+    <ul>
+      <li>TOTAL</li>
+      <li>
+        <strong>{{ total + total / 10 | currency: "USD" }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>

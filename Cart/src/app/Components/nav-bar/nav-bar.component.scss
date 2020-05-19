@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 4rem;
+  margin: 1rem;
+  margin-bottom: 0;
+  background-color: #f8f8f8;
+  border: 1px solid #dbdbdb;
+  border-bottom: none;
+
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      padding: 0 1rem;
+      margin: 0 0.5rem;
+      color: #898989;
+      border-right: 2px solid #bfbfbf;
+      cursor: pointer;
+      outline: none;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  a {
+    i {
+      margin: 0 0.5rem;
+    }
+  }
+}

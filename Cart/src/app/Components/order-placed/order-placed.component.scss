@@ -1,0 +1,35 @@
+.successfully-placed {
+  height: max-content;
+  background-color: #f8f8f8;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  border: 1px solid #dbdbdb;
+  border-top: none;
+  border-bottom: none;
+  color: #5b5b5b;
+
+  h2 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0.6rem auto;
+  }
+  p {
+    width: 70%;
+    text-align: center;
+  }
+  a {
+    padding: 1rem;
+  }
+}
+.blank {
+  height: 300px;
+  margin: 0 1rem;
+  background-color: #fff;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: #dbdbdb;
+}

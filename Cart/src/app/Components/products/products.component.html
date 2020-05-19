@@ -1,0 +1,47 @@
+<div class="search">
+  <h2>Shopping Made Easy !</h2>
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="search()"
+      placeholder="&#61442;  Search..."
+    />
+    <a href="" class="btn" (click)="search()">Submit</a>
+  </div>
+</div>
+
+<div class="product-list">
+  <h2>Product Listing</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatem
+    voluptate tenetur esse consequuntur iusto vel aperiam debitis, fugiat animi.
+  </p>
+  <div class="product-cards">
+    <div class="prod" (input)="($event)" *ngFor="let product of products">
+      <div class="img-over">
+        <img [src]="product.imageUrl" alt="product" />
+        <div class="overlay">
+          <a (click)="addProduct(product.product_id)" class="btn"
+            >Add To Cart</a
+          >
+        </div>
+      </div>
+      <ul>
+        <li>
+          <a [routerLink]="['/product-description', product.product_id]">{{
+            product.name
+          }}</a>
+        </li>
+        <li>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </li>
+        <li>{{ product.price | currency: "USD" }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

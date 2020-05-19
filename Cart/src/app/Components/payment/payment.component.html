@@ -1,0 +1,75 @@
+<div class="payment">
+  <div class="payment-details">
+    <h3>Payment Method</h3>
+    <div class="payment-options">
+      <div class="wrapper">
+        <div class="card-details">
+          <input type="radio" name="payment" />
+          <div class="heading">
+            <h4>Credit Card</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
+              eligendi.
+            </p>
+          </div>
+        </div>
+        <input
+          type="text"
+          placeholder="0000 00000 00000 00000"
+          class="card-no"
+        />
+        <input type="text" placeholder="MM/YY" />
+        <input type="text" placeholder="CVV" />
+        <input type="text" placeholder="Card Holder Name" class="name" />
+      </div>
+      <div class="wrapper">
+        <div class="paypal-details">
+          <input type="radio" name="payment" />
+          <div class="heading">
+            <h4>Paypal</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
+              eligendi.
+            </p>
+          </div>
+          <i class="fab fa-paypal"></i>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a routerLink="../../order-placed" class="btn">Place Order</a>
+      <a routerLink="../../home" class="btn">CANCEL</a>
+    </div>
+  </div>
+  <div class="summary">
+    <h3>Summary</h3>
+    <div *ngFor="let i of cartProducts" class="cart-summary">
+      <img [src]="i.imageUrl" alt="product" />
+      <div class="cart-desc">
+        <h4>{{ i.name }}</h4>
+        <span>{{ i.price | currency: "USD" }}</span>
+      </div>
+    </div>
+    <h4><strong>ENTER COUPON CODE</strong></h4>
+    <div class="price">
+      <ul>
+        <li>SUBTOTAL</li>
+        <li>{{ getTotal() | currency: "USD" }}</li>
+      </ul>
+      <ul>
+        <li>SHIPPING</li>
+        <li>FREE</li>
+      </ul>
+      <ul>
+        <li>TAXES</li>
+        <li>{{ getTotal() / 10 | currency: "USD" }}</li>
+      </ul>
+    </div>
+    <ul>
+      <li>TOTAL</li>
+      <li>
+        <strong>{{ getTotal() + getTotal() / 10 | currency: "USD" }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>
