@@ -1,0 +1,203 @@
+.no-items {
+  padding-bottom: 5rem;
+  background-color: white;
+  margin: 0 1rem;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: #dbdbdb;
+  height: 165px;
+  h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    padding-top: 2rem;
+    color: #606060;
+  }
+}
+.shopping-cart {
+  display: flex;
+  padding-bottom: 5rem;
+  background-color: white;
+  margin: 0 1rem;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: #dbdbdb;
+  .items-added {
+    color: #606060;
+    margin: 2rem 1rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    width: 60%;
+    margin-right: 0;
+    .buttons {
+      margin: 5rem 1rem;
+      height: max-content;
+      a {
+        padding: 1rem 2rem;
+        margin: 0 1rem;
+      }
+    }
+    h3 {
+      font-size: 2rem;
+      font-weight: 300;
+      position: relative;
+      &::before {
+        content: "";
+        width: 90%;
+        height: 1px;
+        background-color: #e6e6e6;
+        position: absolute;
+        top: 60px;
+      }
+    }
+    .details-part {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin: 1rem 0;
+      &:last-child {
+        margin-bottom: 3rem;
+        &:before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #e6e6e6;
+          position: absolute;
+          top: 125px;
+        }
+      }
+      .items {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-evenly;
+        img {
+          height: 100px;
+          width: 200px;
+          margin: 0 1rem 0 0;
+        }
+        .item-desc {
+          p {
+            color: #808080;
+            margin: 0;
+          }
+          h4 {
+            font-weight: 500;
+            margin: 0.5rem 0;
+          }
+        }
+        .data {
+          display: flex;
+          flex-direction: column;
+          label,
+          input,
+          select {
+            margin: 0.3rem 0;
+          }
+        }
+      }
+    }
+  }
+  .summary {
+    color: #606060;
+    margin: 2rem 1rem;
+    margin-bottom: 0;
+    padding: 2rem;
+    margin-left: 0;
+    width: 40%;
+    h3 {
+      font-size: 2rem;
+      font-weight: 300;
+      position: relative;
+      &::before {
+        content: "";
+        width: 90%;
+        height: 1px;
+        background-color: #e6e6e6;
+        position: absolute;
+        top: 60px;
+      }
+    }
+    span {
+      position: relative;
+      margin: 0.5rem 0;
+      margin-right: 1rem;
+      &::before {
+        content: "";
+        width: 90%;
+        height: 1px;
+        background-color: #e6e6e6;
+        position: absolute;
+        top: 36px;
+      }
+    }
+    .price {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        padding-left: 0;
+        width: 90%;
+        position: relative;
+        &:first-child {
+          margin-top: 2rem;
+        }
+        &:last-child {
+          &:before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: #e6e6e6;
+            position: absolute;
+            top: 36px;
+          }
+        }
+      }
+    }
+    > ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      padding-left: 0;
+      width: 90%;
+      margin: 2rem 0;
+      align-items: center;
+      li {
+        &:first-child {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .shopping-cart {
+    .summary {
+      width: 80%;
+      text-align: center;
+    }
+    display: block;
+    text-align: center;
+    .items-added {
+      .buttons {
+        margin: 0;
+      }
+      .details-part {
+        &:before {
+          display: none;
+        }
+        .items {
+          display: block;
+        }
+      }
+      h3 {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}

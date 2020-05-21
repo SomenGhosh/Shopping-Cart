@@ -1,0 +1,69 @@
+<div class="shipping">
+  <div class="ship-details">
+    <h3>Shipping Details</h3>
+    <form>
+      <input type="text" placeholder="First Name" required />
+      <input type="text" placeholder="Last Name" required />
+      <input type="text" placeholder="Address" class="address" required />
+      <input type="text" placeholder="Address 2" class="address" required />
+      <select name="country" id="">
+        <option value="">Country 1</option>
+        <option value="">Country 1</option>
+        <option value="">Country 1</option>
+      </select>
+      <input type="text" placeholder="city" required />
+      <input type="text" placeholder="ZIP/Postal Code" required />
+      <input type="text" placeholder="Phone Number" required />
+      <div class="delivery-options">
+        <div class="item">
+          <input type="radio" name="option" />
+          <div class="txt">
+            <span>Free Delivery</span>
+            <span>Between 3-5 working days</span>
+          </div>
+        </div>
+        <div class="item">
+          <input type="radio" name="option" />
+          <div class="txt">
+            <span>Next Day Delivery - $20</span>
+            <span>24 hours from checkout</span>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button routerLink="../payment" type="submit" class="btn">NEXT</button>
+        <button routerLink="../../home" class="btn">CANCEL</button>
+      </div>
+    </form>
+  </div>
+  <div class="summary">
+    <h3>Summary</h3>
+    <div *ngFor="let i of cartProducts" class="cart-summary">
+      <img [src]="i.imageUrl" alt="product" />
+      <div class="cart-desc">
+        <h4>{{ i.name }}</h4>
+        <span>{{ i.price | currency: "USD" }}</span>
+      </div>
+    </div>
+    <div class="price">
+      <ul>
+        <li>SUBTOTAL</li>
+        <li>{{ getTotal() | currency: "USD" }}</li>
+      </ul>
+      <ul>
+        <li>SHIPPING</li>
+        <li>FREE</li>
+      </ul>
+      <ul>
+        <li>TAXES</li>
+        <li>{{ getTotal() / 10 | currency: "USD" }}</li>
+      </ul>
+    </div>
+    <ul>
+      <li>TOTAL</li>
+      <li>
+        <strong>{{ getTotal() + getTotal() / 10 | currency: "USD" }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>

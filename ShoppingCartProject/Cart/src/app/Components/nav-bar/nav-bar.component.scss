@@ -1,0 +1,97 @@
+.header {
+  .tooltip {
+    position: absolute;
+    left: 93%;
+    background-color: yellow;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    top: 50px;
+    h5 {
+      margin: 0;
+    }
+  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 4rem;
+  margin: 1rem;
+  margin-bottom: 0;
+  background-color: #f8f8f8;
+  border: 1px solid #dbdbdb;
+  border-bottom: none;
+
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      padding: 0 1rem;
+      margin: 0 0.5rem;
+      color: #898989;
+      border-right: 2px solid #bfbfbf;
+      cursor: pointer;
+      outline: none;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  a {
+    i {
+      margin: 0 0.5rem;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .header {
+    max-width: 1024px;
+    .tooltip {
+      left: 90%;
+      top: 43px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    .tooltip {
+      left: 87%;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .header {
+    position: relative;
+    a {
+      position: absolute;
+      left: 39%;
+      top: 71%;
+    }
+    display: block;
+    text-align: center;
+    padding-bottom: 4rem;
+    .tooltip {
+      left: 71%;
+      z-index: 1;
+      top: 75%;
+    }
+    ul {
+      display: block;
+      margin: auto;
+      li {
+        border-right: none;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .header {
+    .tooltip {
+      left: 75%;
+    }
+  }
+}

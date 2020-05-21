@@ -1,0 +1,76 @@
+<div *ngIf="cartProducts.length === 0" class="no-items">
+  <h2>Your Cart is Empty</h2>
+</div>
+<div *ngIf="cartProducts.length > 0" class="shopping-cart">
+  <div class="items-added">
+    <h3>Shopping Cart</h3>
+    <div class="details-wrapper">
+      <div class="details-part" *ngFor="let i of cartProducts">
+        <div class="items">
+          <img src="{{ i.imageUrl }}" alt="product" />
+          <div class="item-desc">
+            <h4>{{ i.name }}</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span>{{ i.price | currency: "USD" }}</span>
+          </div>
+          <div class="data">
+            <label for="Quantity">Quantity</label>
+            <input
+              id="quantity"
+              type="number"
+              value="{{ i.quantity }}"
+              min="0"
+              max="4"
+              (input)="getValue($event, i)"
+            />
+            <label for="model">Model</label>
+            <select (input)="model($event, i)" name="model" id="">
+              <option value="Model1">Model-1</option>
+              <option value="Model2">Model-2</option>
+              <option value="Model3">Model-3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a routerLink="../shipping" class="btn">NEXT</a>
+      <a routerLink="../../home" class="btn">CANCEL</a>
+    </div>
+  </div>
+  <div class="summary">
+    <h3>Summary</h3>
+    <span><strong>ENTER COUPON CODE</strong></span>
+    <input type="text" (keydown)="choice($event)" />
+    <div class="applied">
+      <h3 *ngIf="counter">50% OFF COUPON APPLIED</h3>
+    </div>
+    <div class="price">
+      <ul>
+        <li>SUBTOTAL</li>
+        <li *ngIf="counter">{{ getTotal() / 2 | currency: "USD" }}</li>
+        <li *ngIf="!counter">{{ getTotal() | currency: "USD" }}</li>
+      </ul>
+      <ul>
+        <li>SHIPPING</li>
+        <li>FREE</li>
+      </ul>
+      <ul>
+        <li>TAXES</li>
+        <li *ngIf="counter">{{ getTotal() / 20 | currency: "USD" }}</li>
+        <li *ngIf="!counter">{{ getTotal() / 10 | currency: "USD" }}</li>
+      </ul>
+    </div>
+    <ul>
+      <li>TOTAL</li>
+      <li *ngIf="counter">
+        <strong>
+          {{ getTotal() / 2 + getTotal() / 20 | currency: "USD" }}</strong
+        >
+      </li>
+      <li *ngIf="!counter">
+        <strong>{{ getTotal() + getTotal() / 10 | currency: "USD" }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>
